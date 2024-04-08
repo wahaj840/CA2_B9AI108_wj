@@ -9,8 +9,7 @@ api_key=os.getenv('API_KEY')
 
 @dataclass
 class WeatherData:
-    
-
+    pass
 
 def get_lang_long(city_name, state_code, country_code, API_key):
     response = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={city_name},{state_code},{country_code}&appid={API_key}').json()
@@ -25,7 +24,7 @@ def get_lang_long(city_name, state_code, country_code, API_key):
 
 
 def get_current_weather(lat, lon, API_key):
-    response= requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_key}').json()
+    response= requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_key}&units=metric').json()
 
     print (response)
 
