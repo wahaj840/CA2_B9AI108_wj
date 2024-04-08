@@ -59,6 +59,7 @@ def main (city_name, state_name, country_name):
     lat,lon = get_lang_long('Dublin','Leinster', 'Ireland', api_key)
     weather_data= get_current_weather(lat, lon, api_key)
     return weather_data
+    
 
 
 if __name__=="__main__":
