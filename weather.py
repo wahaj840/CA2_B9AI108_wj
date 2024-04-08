@@ -16,4 +16,4 @@ def get_lang_long(city_name, state_code, country_code, API_key):
 
 #get_lang_long('Dublin','Dublin','Ireland', api_key)
 
-print(get_lang_long('Dublin','Dublin', 'Ireland', api_key))        
+print(get_lang_long('Dublin','Leinster', 'Ireland', api_key))        
