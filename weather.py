@@ -1,9 +1,16 @@
 import requests
 from dotenv import load_dotenv
 import os
+from dataclasses import dataclass
+
 
 load_dotenv
 api_key=os.getenv('API_KEY')
+
+@dataclass
+class WeatherData:
+    
+
 
 def get_lang_long(city_name, state_code, country_code, API_key):
     response = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={city_name},{state_code},{country_code}&appid={API_key}').json()
