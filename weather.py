@@ -17,6 +17,9 @@ class WeatherData:
     max_tempreture: float
     air_pressure: int
     humidity: int
+    visibility: int
+    wind_speed: float
+    wind_degree: int
     
 
 
@@ -43,8 +46,10 @@ def get_current_weather(lat, lon, API_key):
         min_tempreture=response.get('main').get('temp_min'),
         max_tempreture=response.get('main').get('temp_max'),
         air_pressure=response.get('main').get('pressure'),
-        humidity=response.get('main').get('humidity')
-
+        humidity=response.get('main').get('humidity'),
+        visibility=response.get('visibility'),
+        wind_speed=response.get('wind').get('speed'),
+        wind_degree=response.get('wind').get('deg'),
         )
     
     return data
