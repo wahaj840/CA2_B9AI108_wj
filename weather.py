@@ -16,4 +16,10 @@ def get_lang_long(city_name, state_code, country_code, API_key):
 
 #get_lang_long('Dublin','Dublin','Ireland', api_key)
 
-print(get_lang_long('Dublin','Leinster', 'Ireland', api_key))        
+
+def get_current_weather(lat, lon, API_key):
+    response= requests.get(f:'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_key}')
+
+
+
+#print(get_lang_long('Dublin','Leinster', 'Ireland', api_key))        
