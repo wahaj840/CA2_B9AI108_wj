@@ -2,6 +2,7 @@ import requests
 from dotenv import load_dotenv
 import os
 from dataclasses import dataclass
+import csv
 
 
 load_dotenv
@@ -73,3 +74,4 @@ if __name__=="__main__":
 
 
 csv_file="weather_data.csv"
+
