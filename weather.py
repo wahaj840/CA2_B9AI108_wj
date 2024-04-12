@@ -42,7 +42,14 @@ def fetch_raw_data(city_name, state_name, country_name):
     if response.status.code ==200:
         raw_data=response.json
         return raw_data
-    
+    else:
+        print("Failed to Fetch the data")
+        return None
+
+
+city_name="Dublin"
+state_name="Leinster"
+country_name="Ireland"    
 
 
 
