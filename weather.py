@@ -81,9 +81,9 @@ df = pd.DataFrame({
     'Main': [data.main],
     'Description': [data.description],
     'Icon': [data.icon],
-    'Temperature': [data.temperature],
-    'Min Temperature': [data.min_temperature],
-    'Max Temperature': [data.max_temperature],
+    'Temperature': [data.tempreture],
+    'Min Temperature': [data.min_tempreture],
+    'Max Temperature': [data.max_tempreture],
     'Air Pressure': [data.air_pressure],
     'Humidity': [data.humidity],
     'Visibility': [data.visibility],
@@ -91,7 +91,7 @@ df = pd.DataFrame({
     'Wind Degree': [data.wind_degree]
 })
 
-csv_file="weather_data.csv"
+csv_file="weather_data1.csv"
 
 df.to_csv(csv_file, index=False)
 
