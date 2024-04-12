@@ -77,3 +77,4 @@ csv_file="weather_data.csv"
 
 with open(csv_file, 'w', newline='') as file:
     writer = csv.writer(file)
+    writer.writerow(['Main', 'Description', 'Icon', 'Temperature', 'Min Temperature', 'Max Temperature', 'Air Pressure', 'Humidity', 'Visibility', 'Wind Speed', 'Wind Degree'])
