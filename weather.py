@@ -36,27 +36,31 @@ def get_lang_long(city_name, state_code, country_code, API_key):
 
 # Fetching and saving the Unprocessed data in a CSV
 
-def fetch_raw_data(city_name, state_name, country_name):
+def fetch_raw_data(city_name, state_code, country_code, API_key):
     response = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={city_name},{state_code},{country_code}&appid={API_key}')
-
-    if response.status.code ==200:
-        raw_data=response.json
-        return raw_data
+    if response.status_code == 200:
+        return response.json()  # Return the raw JSON data
     else:
-        print("Failed to Fetch the data")
+        print("Failed to fetch data from the API")
         return None
-
 
 city_name="Dublin"
 state_name="Leinster"
-country_name="Ireland"    
+country_name="Ireland"
+api_key= "c542897b543bb199a66f36f6de4e89c5"
 
-raw_data= fetch_raw_data(city_name, state_name, country_name)
+
+raw_data= fetch_raw_data(city_name, state_name, country_name, api_key)
 
 if raw_data:
     df= pd.DataFrame(raw_data)
-    csv_file="raw_weather_data.csv"
+    csv_file_raw="raw_weather_data.csv"
+    
+    df.to_csv(csv_file_raw, index=False)
+    print("Raw data has been imported successfully. File name:", csv_file_raw)
+    
 
+    
 
 #get_lang_long('Dublin','Leinster','Ireland', api_key)
 
