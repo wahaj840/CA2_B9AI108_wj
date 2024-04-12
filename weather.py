@@ -73,6 +73,12 @@ if __name__=="__main__":
 #print(get_lang_long('Dublin','Leinster', 'Ireland', api_key))    
 
 
+
+
+
+
+#Fetching and saving the processed data in a CSV
+
 data = get_current_weather(53.349805, -6.26031, api_key)
 
 
