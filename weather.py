@@ -33,6 +33,16 @@ def get_lang_long(city_name, state_code, country_code, API_key):
 
     #print(response)
 
+
+# Fetching and saving the Unprocessed data in a CSV
+
+def fetch_raw_data(city_name, state_name, country_name):
+    response = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={city_name},{state_code},{country_code}&appid={API_key}')
+
+
+
+
+
 #get_lang_long('Dublin','Leinster','Ireland', api_key)
 
 
@@ -71,6 +81,11 @@ if __name__=="__main__":
 
 
 #print(get_lang_long('Dublin','Leinster', 'Ireland', api_key))    
+
+
+
+
+
 
 
 
