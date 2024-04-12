@@ -75,7 +75,7 @@ if __name__=="__main__":
 
 data = get_current_weather(53.349805, -6.26031, api_key)
 
-csv_file="weather_data.csv"
+
 
 df = pd.DataFrame({
     'Main': [data.main],
@@ -91,6 +91,9 @@ df = pd.DataFrame({
     'Wind Degree': [data.wind_degree]
 })
 
+csv_file="weather_data.csv"
+
+df.to_csv(csv_file, index=False)
 
     
 print (" Processed Weather Data has been stored in csv file successfully. File Name:" ,csv_file)
