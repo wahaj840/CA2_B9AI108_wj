@@ -55,6 +55,7 @@ raw_data= fetch_raw_data(city_name, state_name, country_name)
 
 if raw_data:
     df= pd.DataFrame(raw_data)
+    csv_file="raw_weather_data.csv"
 
 
 #get_lang_long('Dublin','Leinster','Ireland', api_key)
