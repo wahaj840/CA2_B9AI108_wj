@@ -75,3 +75,5 @@ if __name__=="__main__":
 
 csv_file="weather_data.csv"
 
+with open(csv_file, 'w', newline='') as file:
+    writer = csv.writer(file)
