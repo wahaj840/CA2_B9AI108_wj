@@ -51,6 +51,7 @@ city_name="Dublin"
 state_name="Leinster"
 country_name="Ireland"    
 
+raw_data= fetch_raw_data(city_name, state_name, country_name)
 
 
 
