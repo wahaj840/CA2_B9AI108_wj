@@ -77,9 +77,20 @@ data = get_current_weather(53.349805, -6.26031, api_key)
 
 csv_file="weather_data.csv"
 
-with open(csv_file, 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(['Main', 'Description', 'Icon', 'Temperature', 'Min Temperature', 'Max Temperature', 'Air Pressure', 'Humidity', 'Visibility', 'Wind Speed', 'Wind Degree'])
-    writer.writerow([data.main, data.description, data.icon, data.tempreture, data.min_tempreture, data.max_tempreture, data.air_pressure, data.humidity, data.visibility, data.wind_speed, data.wind_degree])
+df = pd.DataFrame({
+    'Main': [data.main],
+    'Description': [data.description],
+    'Icon': [data.icon],
+    'Temperature': [data.temperature],
+    'Min Temperature': [data.min_temperature],
+    'Max Temperature': [data.max_temperature],
+    'Air Pressure': [data.air_pressure],
+    'Humidity': [data.humidity],
+    'Visibility': [data.visibility],
+    'Wind Speed': [data.wind_speed],
+    'Wind Degree': [data.wind_degree]
+})
+
+
     
-    print (" Processed Weather Data has been stored in csv file successfully. File Name:" ,csv_file)
+print (" Processed Weather Data has been stored in csv file successfully. File Name:" ,csv_file)
