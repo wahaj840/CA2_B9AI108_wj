@@ -81,3 +81,5 @@ with open(csv_file, 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(['Main', 'Description', 'Icon', 'Temperature', 'Min Temperature', 'Max Temperature', 'Air Pressure', 'Humidity', 'Visibility', 'Wind Speed', 'Wind Degree'])
     writer.writerow([data.main, data.description, data.icon, data.tempreture, data.min_tempreture, data.max_tempreture, data.air_pressure, data.humidity, data.visibility, data.wind_speed, data.wind_degree])
+    
+    print (" Processed Weather Data has been stored in csv file successfully. File Name:" ,csv_file)
