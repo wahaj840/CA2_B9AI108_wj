@@ -28,21 +28,21 @@ def get_lang_long(city_name, state_code, country_code, API_key):
     response = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={city_name},{state_code},{country_code}&appid={API_key}').json()
    
     data = response[0]
+    #print(response)
     lat, lon =data.get('lat'), data.get('lon')
     return lat, lon
 
-    #print(response)
 
 
-# Fetching and saving the Unprocessed data in a CSV
 
-def fetch_raw_data(city_name, state_code, country_code, API_key):
-    response = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={city_name},{state_code},{country_code}&appid={API_key}')
-    if response.status_code == 200:
-        return response.json()  # Return the raw JSON data
-    else:
-        print("Failed to fetch data from the API")
-        return None
+
+# Fetching and saving the Unprocessed data
+
+def fetch_raw_data(lat, lon, api_key):
+    response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=metric').json()
+    print(response)
+     # Return the raw JSON data
+
 
 city_name="Dublin"
 state_name="Leinster"
@@ -50,24 +50,25 @@ country_name="Ireland"
 api_key= "c542897b543bb199a66f36f6de4e89c5"
 
 
-raw_data= fetch_raw_data(city_name, state_name, country_name, api_key)
-
-if raw_data:
-    df= pd.DataFrame(raw_data)
-    csv_file_raw="raw_weather_data.csv"
     
-    df.to_csv(csv_file_raw, index=False)
-    print("Raw data has been imported successfully. File name:", csv_file_raw)
-    
+if __name__=="__main__":
+    lat ,lon = get_lang_long('Dublin','Leinster', 'Ireland', api_key)
 
+    print(fetch_raw_data(lat, lon, api_key))
+
+
+
+#get_lang_long('Dublin','Leinster','Ireland', api_key)
     
 
 #get_lang_long('Dublin','Leinster','Ireland', api_key)
 
 
+
 def get_current_weather(lat, lon, API_key):
     response= requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_key}&units=metric').json()
-   
+    print (response)
+
     data= WeatherData(
         main=response.get('weather')[0].get('main'),
         description=response.get('weather')[0].get('description'),
@@ -111,8 +112,9 @@ if __name__=="__main__":
 
 
 
-#Fetching and saving the processed data in a CSV
+#Fetching and saving the processed data
 
+'''
 data = get_current_weather(53.349805, -6.26031, api_key)
 
 
@@ -137,3 +139,4 @@ df.to_csv(csv_file, index=False)
 
     
 print (" Processed Weather Data has been stored in csv file successfully. File Name:" ,csv_file)
+'''
