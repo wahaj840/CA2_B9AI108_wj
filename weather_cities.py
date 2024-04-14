@@ -30,6 +30,13 @@ lon_max= 2
 counter=0
 cities=[]
 
+#Generating random lat and lon cordinates within IRE and UK
+#iterations set to 50
+while counter< 50:
+    lat=random.uniform(lat_min,lat_max)
+    lon=random.uniform(lon_min,lon_max)
+
+
 
 
 
