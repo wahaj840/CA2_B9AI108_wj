@@ -44,7 +44,13 @@ while counter< 50:
         cities.append(city)
         counter +=1
 
-    
+   # API call code (URL where we will be fetching the data, its units and the API key)
+query_url= f"{url}appid={api_key}&units={units}&q="
+units='metric'
+api_key='c542897b543bb199a66f36f6de4e89c5'
+
+
+
 
 
 
