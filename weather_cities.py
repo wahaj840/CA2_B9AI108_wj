@@ -36,6 +36,9 @@ while counter< 50:
     lat=random.uniform(lat_min,lat_max)
     lon=random.uniform(lon_min,lon_max)
 
+    #Finding the nearest city to the assigned cordinates
+    city=citipy.nearest_city(lat,lon).city_name
+
 
 
 
