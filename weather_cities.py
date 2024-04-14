@@ -39,6 +39,12 @@ while counter< 50:
     #Finding the nearest city to the assigned cordinates
     city=citipy.nearest_city(lat,lon).city_name
 
+    #Check wheather city is not already existing
+    if city not in cities:
+        cities.append(city)
+        counter +=1
+
+    
 
 
 
