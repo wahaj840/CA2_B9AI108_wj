@@ -26,6 +26,9 @@ lat_max=60
 lon_min= -10.5
 lon_max= 2
 
+# Setting a counter and create an empty list for holding the city and country information
+counter=0
+cities=[]
 
 
 
