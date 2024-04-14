@@ -169,3 +169,11 @@ python.exe
 pythonw.exe
 .gitignore
 activate
+f2py.exe
+fontools.exe
+pyftmerge.exe
+pyftsubmerge.exe
+ttx.exe
+ttx.1
+pyftsubset.exe
+fonttools.exe
